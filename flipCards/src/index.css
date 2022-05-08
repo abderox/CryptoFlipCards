@@ -1,0 +1,238 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+}
+
+.gradient-bg-welcome {
+    background-color: #0f0e13;
+    background-image: radial-gradient( at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%), radial-gradient(at 100% 0%, rgb(33, 8, 100) 0, transparent 50%);
+
+    
+}
+
+.gradient-bg-services {
+    background-color: #0f0e13;
+    background-image: radial-gradient( at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(225, 39%, 25%, 1) 0, transparent 50%);
+}
+
+.gradient-bg-transactions {
+    background-color: #0f0e13;
+    background-image: radial-gradient( at 0% 100%, hsla(253, 16%, 7%, 1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225, 39%, 25%, 1) 0, transparent 50%);
+}
+
+.gradient-bg-footer {
+    background-color: #0f0e13;
+    background-image: radial-gradient( at 0% 100%, hsla(253, 16%, 7%, 1) 0, transparent 53%), radial-gradient(at 50% 150%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+    -webkit-clip-path: polygon(0% 8%, 9% 10%, 18% 12%, 24% 12%, 31% 12%, 39% 12%, 45% 12%, 53% 12%, 61% 12%, 72% 13%, 80% 14%, 86% 14%, 92% 14%, 100% 15%, 100% 100%, 0 100%, );
+clip-path: polygon(0% 8%, 9% 10%, 18% 12%, 24% 12%, 31% 12%, 39% 12%, 45% 12%, 53% 12%, 61% 12%, 72% 13%, 80% 14%, 86% 14%, 92% 14%, 100% 15%, 100% 100%, 0 100%, );
+}
+
+.blue-glassmorphism {
+    background: rgb(39, 51, 89, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+}
+
+.blue-card-glassmorphism {
+    background-color: #1d0e587c;
+    background-image: radial-gradient( at 0% 0%, rgba(128, 43, 224, 0.39) 0, transparent 50%), radial-gradient(at 50% 0%, rgba(47, 62, 106, 0.171) 0, transparent 50%), radial-gradient(at 100% 0%, rgba(33, 8, 100, 0.185) 0, transparent 50%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.transfer-btn:hover {
+    background: rgba(231, 74, 218, 0.089);
+   
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+
+/* white glassmorphism */
+
+.white-glassmorphism {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: none;
+}
+
+.eth-card {
+    background-color: #99ccff;
+    background-image: radial-gradient( at 52% 23%, hsla(267, 83%, 82%, 1) 0, transparent 52%), radial-gradient(at 34% 91%, hsla(250, 98%, 70%, 1) 0, transparent 59%), radial-gradient(at 45% 17%, hsla(251, 86%, 75%, 1) 0, transparent 55%), radial-gradient(at 32% 3%, hsla(275, 89%, 74%, 1) 0, transparent 42%);
+}
+
+.text-gradient {
+    background-color: #fff;
+    background-image: radial-gradient( at 4% 36%, rgb(233, 185, 245) 0, transparent 53%), radial-gradient(at 100% 60%, rgb(125, 78, 172) 0, transparent 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.image-width {
+    width: 200px;
+    height: 70px;
+}
+
+.eth-card-back {
+    background-color: #00bfff;
+    background-image: radial-gradient( at 40% 20%, hsla(181, 83%, 82%, 1) 0, transparent 50%), radial-gradient(at 80% 0%, hsla(176, 98%, 70%, 1) 0, transparent 50%), radial-gradient(at 0% 50%, hsla(264, 99%, 72%, 1) 0, transparent 50%);
+}
+
+.flip-card {
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+@media (max-width: 720px) {
+    .small-devices {
+        border-bottom-left-radius: 1rem/* 16px */
+        ;
+    }
+}
+
+@media (max-width: 720px) {
+    .small-devices-right {
+        border-top-right-radius: 1rem;
+    }
+}
+
+#space {
+    z-index: 0;
+    margin: auto;
+    width: 200px;
+    height: 125px;
+    transform: perspective 400px;
+    transform-origin: 110px 110px;
+}
+.zindex{
+    z-index: 4;
+}
+
+.elogo {
+    z-index: 0;
+    margin: auto;
+    position: reative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    transform-origin: 110px 110px 0;
+    transform: perspective(400px) rotateY(46deg) rotateX(-5deg) rotateZ(-5deg);
+}
+
+.elogo:hover {
+    animation: aniether 6s infinite;
+    transform-style: preserve-3d;
+    transform-origin: 110px 110px 0;
+    transform: perspective(400px) rotateY(46deg) rotateX(-5deg) rotateZ(-5deg);
+}
+
+.trif {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+}
+
+.elogo .u1 {
+    transform: translateZ(50px) rotateX(23.5deg);
+    border-bottom: 250px solid rgba(51, 50, 51, 0.8);
+}
+
+.elogo .u2 {
+    transform: rotateY(90deg) translateZ(50px) rotateX(23.5deg);
+    border-bottom: 250px solid rgba(50, 50, 51, 0.6);
+}
+
+.elogo .u3 {
+    transform: rotateY(180deg) translateZ(50px) rotateX(23.5deg);
+    border-bottom: 250px solid rgba(50, 50, 51, 0.3);
+}
+
+.elogo .u4 {
+    transform: rotateY(-90deg) translateZ(50px) rotateX(23.5deg);
+    border-bottom: 250px solid rgba(50, 50, 51, 0.3);
+}
+
+.elogo .ct {
+    width: 200px;
+    height: 200px;
+    border: 0;
+    transform: rotateX(-90deg) translateZ(140px);
+    background-color: rgba(60, 60, 61, 1);
+}
+
+.elogo .l1 {
+    transform: translateY(55px) translateZ(50px) rotateX(156.5deg);
+    border-bottom: 250px solid rgba(50, 50, 51, 0.85);
+}
+
+.elogo .l4 {
+    transform: translateY(55px) rotateY(-90deg) rotateZ(0deg) translateZ(50px) rotateX(156.5deg);
+    border-bottom: 250px solid rgba(50, 50, 51, 0.45);
+}
+
+@keyframes aniether {
+    20% {
+        transform: perspective(400px) rotateY(46deg);
+    }
+    30% {
+        transform: perspective(400px) rotateY(10deg);
+    }
+    50% {
+        transform: perspective(400px) rotateY(46deg);
+    }
+    60% {
+        transform: perspective(400px) rotateY(80deg);
+    }
+    80% {
+        transform: perspective(400px) rotateY(46deg);
+    }
+    100% {
+        transform: perspective(400px) rotateY(46deg) rotateX(-5deg) rotateZ(-5deg);
+    }
+}
