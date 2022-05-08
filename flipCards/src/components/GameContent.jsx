@@ -87,6 +87,11 @@ const GameContent = () => {
                 })
                 console.log("horary");
                 resetTurn();
+                if(turns-fails===(imagesSources.length))
+                {
+                    setTurns(0)
+                    setfails(0)
+                }
             }
             else {
                 resetTurn();
@@ -122,8 +127,8 @@ const GameContent = () => {
                             className=" mf:h-48 sm:24  cursor-pointer mr-4 "
                         />
                     </a>
-                    <h1 className=" text-[60px] text-center my-2 text-gradient transfer-btn-text">
-                        Crypto Memory Cards
+                    <h1 className=" text-[60px] text-center my-2 text-gradient transfer-btn-text ">
+                       { turns-fails===imagesSources.length ? "Horay ! You won !" : "Crypto Memory Cards" } 
                     </h1>
                 </div>
             </div>
