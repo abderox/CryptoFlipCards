@@ -1,25 +1,25 @@
 
 import { useState } from 'react';
 
-const Card = ({ card,handleChoice }) => {
-  
- const [toggleStyle, setToggleStyle] = useState(false)
- const transition = "-translate-x-full transition duration-500 ease-out ";
+const Card = ({ card,handleChoice,flipped , matched }) => {
+
+ const transition = "-translate-x-full transition duration-1000 ease-out ";
+
+
  const handleClick = ()=>{
-     setToggleStyle(!toggleStyle);
      handleChoice(card);
  }   
 
     return (
-        <div  className="relative  blue-glassmorphism m-4  mf:ml-10 flex flex-1
+        <div  className={`relative ${card.matched ? "blue-glassmorphism-success" : ""} blue-glassmorphism m-4  mf:ml-10 flex flex-1 ${matched && "animate-pulse "}
        
-        mf:max-w-[200px]
-        mf:max-h-[200px]
+        mf:max-w-[170px]
+        mf:max-h-[170px]
         sm:max-w-[150px]
         sm:max-h-[150px]
         max-w-[100px]
         max-h-[100px]
-        flex-col p-2 rounded-md  overflow-hidden" >
+        flex-col p-2 rounded-md  overflow-hidden`} >
 
       <div className=" 
           flex flex-1
@@ -42,14 +42,15 @@ const Card = ({ card,handleChoice }) => {
   
         </div>
       </div>
-      <div className={`  absolute  flex flex-1 ${toggleStyle && transition}
-       back
-      mf:max-w-[200px]
-      mf:max-h-[200px]
-      sm:max-w-[150px]
-      sm:max-h-[150px]
-      max-w-[100px]
-      max-h-[100px]
+      <div className={`  absolute  flex flex-1 ${ flipped ? transition : "" }
+      
+     
+       mf:max-w-[170px]
+       mf:max-h-[170px]
+       sm:max-w-[150px]
+       sm:max-h-[150px]
+       max-w-[100px]
+       max-h-[100px]
       flex-col  rounded-md  overflow-hidden`} 
     >
       <div className=" flip-card-inner flex flex-col items-center w-full m1-3 overflow-hidden">

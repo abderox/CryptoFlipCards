@@ -56,6 +56,12 @@ clip-path: polygon(0% 8%, 9% 10%, 18% 12%, 24% 12%, 31% 12%, 39% 12%, 45% 12%, 5
     -webkit-backdrop-filter: blur(5px);
     
 }
+.blue-glassmorphism-success {
+    background: rgba(23, 221, 83, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
 
 .blue-card-glassmorphism {
     background-color: #1d0e587c;
