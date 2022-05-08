@@ -6,7 +6,7 @@ const Footer = () => {
 <footer className="p-4  rounded-tl-tr-lg shadow md:px-6 md:py-8 gradient-bg-footer">
 <div className="gradient-bg-services flex flex-grow  ">..</div>
 <div className="sm:flex sm:items-center sm:justify-between ">
-<a href="https://www.canva.com/design/DAFAF9jBTB0/HVpTmOix4rxpNPBhYV-WAw/view?utm_content=DAFAF9jBTB0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" className="flex items-center mb-4 sm:mb-0">
+<a href="https://www.canva.com/design/DAFAF9jBTB0/HVpTmOix4rxpNPBhYV-WAw/view?utm_content=DAFAF9jBTB0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" className="flex items-center mb-4 sm:mb-0 ">
 <img
           src={logo}
           alt="logo"
@@ -15,7 +15,7 @@ const Footer = () => {
 </a>
 <ul className="flex flex-wrap items-center mb-6 sm:mb-0">
 <li>
-<a href="#" className="mr-4 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400">About</a>
+<a href="https://github.com/abderox/CryptoFlipCards" className="mr-4 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400">Source code</a>
 </li>
 <li>
 <a href="#" className="mr-4 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400">Privacy Policy</a>

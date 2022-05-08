@@ -94,8 +94,13 @@ const GameContent = () => {
                 }
             }
             else {
-                resetTurn();
-                resetFail();
+                
+                setTimeout(() => {
+                    resetFail();
+                    resetTurn();
+                  }, 2000);
+                  
+                
             }
         }
 
@@ -144,7 +149,7 @@ const GameContent = () => {
                             <span class="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-purple-800 rounded-full blur-md"></span>
                             <span class="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-violet-800 rounded-full blur-md"></span>
                         </span>
-                        <span class="relative text-white text-lg font-semibold ml-10">Attempts {retries}</span>
+                        <span class="relative text-white text-lg font-semibold ">Attempts {retries}</span>
                         <span class={`relative text-white text-lg font-semibold ml-10  ${turns - fails > 0 && "text-green-500"}`}>Scores {turns - fails > 0 ? turns - fails : 0}</span>
                         <span class="relative text-white text-lg font-semibold ml-10">Turns {turns}</span>
                         <span class={`relative text-white text-lg font-semibold ml-10 ${fails > 0 && "text-pink-500"}`}>Fails {fails}</span>
