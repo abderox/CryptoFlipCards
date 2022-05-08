@@ -4,7 +4,7 @@ const Footer = () => {
     return (
 
 <footer className="p-4  rounded-tl-tr-lg shadow md:px-6 md:py-8 gradient-bg-footer">
-<div class="gradient-bg-services flex flex-grow  ">..</div>
+<div className="gradient-bg-services flex flex-grow  ">..</div>
 <div className="sm:flex sm:items-center sm:justify-between ">
 <a href="https://www.canva.com/design/DAFAF9jBTB0/HVpTmOix4rxpNPBhYV-WAw/view?utm_content=DAFAF9jBTB0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" className="flex items-center mb-4 sm:mb-0">
 <img
