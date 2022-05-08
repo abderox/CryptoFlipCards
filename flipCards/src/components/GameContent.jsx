@@ -33,6 +33,8 @@ const GameContent = () => {
 
     const [cards, setCards] = useState([]);
     const [turns, setTurns] = useState(0);
+    const [Choice, setChoice] = useState(null)
+    const [ChoiceTwo, setChoiceTwo] = useState(null)
 
     const shuffleCards = () => {
         const shuffleCards = [...imagesSources, ...imagesSources]
@@ -42,6 +44,16 @@ const GameContent = () => {
         setTurns(0)
         console.log(cards, turns)
 
+    }
+
+    const handleChoice = (card) =>{
+        Choice ? setChoiceTwo(card) : setChoice(card);
+    }
+
+    const resetTurn = ()=> {
+        setChoice(null);
+        setChoiceTwo(null);
+        setTurns(prev=>prev+1);
     }
     return (
         <div className="gradient-bg-welcome flex flex-col p-5 justify-center items-center">
@@ -60,7 +72,7 @@ const GameContent = () => {
 
                 {cards.map((card, i) => (
 
-                    <Card key={i} src={card.src} />
+                    <Card key={i} card={card} handleChoice={handleChoice}/>
 
                 ))}
 
