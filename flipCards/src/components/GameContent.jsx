@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react';
+import { scroller } from "react-scroll";
 import { Card } from './export'
 import logo from "../../images/koar.png";
+import me from "../../images/ABDELHADI.png";
 const imagesUrl = "../../images/";
 const extension = ".jpg";
+
+
+
 
 const imagesSources = [
     { "src": imagesUrl + "bitcoin" + extension, matched: true },
@@ -15,6 +20,13 @@ const imagesSources = [
     { "src": imagesUrl + "tether" + extension, matched: true },
 ];
 
+const scrollToSection = (here) => {
+    scroller.scrollTo(here, {
+      duration: 700,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
 const StartButton = ({ title, clickHandler }) => {
     return (
 
@@ -38,20 +50,22 @@ const GameContent = () => {
     const [Choice, setChoice] = useState(null);
     const [ChoiceTwo, setChoiceTwo] = useState(null);
     const [retries, setretries] = useState(0);
-    
+
 
     const shuffleCards = () => {
+
         const shuffleCards = [...imagesSources, ...imagesSources]
             .sort(() => (Math.random() - 0.5))
             .map((image) => ({ ...image, id: Math.random() }));
         setCards(shuffleCards);
-        setretries(prev => prev +1)
+        scrollToSection("horary");
+        setretries(prev => prev + 1)
         setTurns(0)
         setfails(0)
         console.log(cards, turns)
         const timer = setTimeout(() => {
             flipAll();
-          }, 3000);
+        }, 3000);
 
     }
 
@@ -59,20 +73,20 @@ const GameContent = () => {
         Choice ? setChoiceTwo(card) : setChoice(card);
 
     }
-    const flipAll=()=>{
+    const flipAll = () => {
         setCards((prev) => {
-             return prev.map(card => {
-                
-                return {...card,matched:false}
-               
+            return prev.map(card => {
+
+                return { ...card, matched: false }
+
             });
         })
     }
 
- 
+
     useEffect(() => {
 
-        
+
         if (Choice && ChoiceTwo) {
             if (Choice.src === ChoiceTwo.src) {
                 setCards(prev => {
@@ -87,24 +101,23 @@ const GameContent = () => {
                 })
                 console.log("horary");
                 resetTurn();
-                if(turns-fails===(imagesSources.length))
-                {
+                if (turns - fails === (imagesSources.length)) {
                     setTurns(0)
                     setfails(0)
                 }
             }
             else {
-                
+
                 setTimeout(() => {
                     resetFail();
                     resetTurn();
-                  }, 2000);
-                  
-                
+                }, 2000);
+
+
             }
         }
 
-       
+
 
     }, [Choice, ChoiceTwo])
 
@@ -133,7 +146,7 @@ const GameContent = () => {
                         />
                     </a>
                     <h1 className=" text-[60px] text-center my-2 text-gradient transfer-btn-text ">
-                       { turns-fails===imagesSources.length ? "Horay ! You won !" : "Crypto Memory Cards" } 
+                        {turns - fails === imagesSources.length ? "Horay ! You won !" : "Crypto Memory Cards"}
                     </h1>
                 </div>
             </div>
@@ -142,7 +155,7 @@ const GameContent = () => {
             <StartButton title={cards.length > 0 ? "Restart" : "New game"} clickHandler={shuffleCards} />
             <div className="w-full mf:w-4/6 my-5 blue-glassmorphism justify-center items-center rounded-full">
 
-                <div className="flex flex-col  ">
+                <div  className="horary flex flex-col  ">
                     <a href="#_" class="relative inline-flex items-center justify-center inline-block p-4 px-5 py-3 overflow-hidden text-indigo-600 rounded-lg shadow-2xl group">
                         <span class="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-700 bg-pink-500 rounded-full blur-md ease"></span>
                         <span class="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
@@ -156,8 +169,14 @@ const GameContent = () => {
                     </a>
                 </div>
             </div>
-
-            <div className="p-5 w-full mf:w-4/6  justify-center items-center blue-glassmorphism grid grid-cols-4 gap-y-2 mf:-gap-x-30  shadow-2xl ">
+            {retries <= 0 && (<a href="" target="_blank" className="flex items-center mb-4 sm:mb-0  flex-1 flex-col ">
+                <img
+                    src={me}
+                    alt="logo"
+                    className=" w-3/6 cursor-pointer m-15 rounded-full p-5 "
+                />
+            </a>)}
+            <div className=" p-5 w-full mf:w-4/6  justify-center items-center blue-glassmorphism grid grid-cols-4 gap-y-2 mf:-gap-x-30  shadow-2xl ">
 
                 {cards.map((card, i) => (
 
