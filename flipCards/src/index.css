@@ -1,7 +1,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
-
+@import url('http://fonts.cdnfonts.com/css/assassin');
 
 @tailwind base;
 @tailwind components;
@@ -19,6 +19,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     
+}
+
+.transfer-btn-text {
+  font-family: 'Assassin$', sans-serif;
 }
 
 .gradient-bg-welcome {
