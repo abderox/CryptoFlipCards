@@ -5,7 +5,7 @@ import { RiReactjsLine } from "react-icons/ri";
 import {GiGamepad} from "react-icons/gi";
 import { AiOutlineGithub } from "react-icons/ai";
 
-const ServiceCard = ({ color, title, icon, subtitle }) => (
+const ServiceCard = ({ color, title, icon, subtitle,github }) => (
   <div className="flex flex-row justify-start items-start white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl ">
     <div className={`w-10 h-10 rounded-full flex justify-center items-center ${color}`}>
       {icon}
@@ -15,6 +15,8 @@ const ServiceCard = ({ color, title, icon, subtitle }) => (
       <p className="mt-1 text-white text-sm md:w-11/12 ">
         {subtitle}
       </p>
+      {github &&
+        (<a href="https://github.com/abderox/CryptoFlipCards" class="text-pink-600 visited:text-purple-600 font-semibold pt-2" target="_blank" rel="noopener noreferrer">CryptoFlipCards</a>)}
     </div>
   </div>
 );
@@ -29,20 +31,21 @@ const Services = () => (
           color="bg-[#2952E3]"
           title="Retro games"
           icon={<GiGamepad fontSize={30} className="text-white" />}
-          subtitle="Vantage game. Enjoy playing  . I will build a better ones next time . Don't forget learning is a must firmly ..
+          subtitle="Vantage game. Enjoy playing  . I will build a better ones next time . Don't forget learning is a must firmly  
           "
         />
         <ServiceCard
           color="bg-[#8945F8]"
           title="Learning React"
           icon={<RiReactjsLine fontSize={30} className="text-white" />}
-          subtitle="The main goal of this web app , indeed is leaning React Js . Games makes learning challenging and typical"
+          subtitle="The main goal of this web app , indeed is leaning React Js .. Games makes learning challenging and typical ..."
         />
         <ServiceCard
           color="bg-[#F84550]"
+          github="true"
           title="Open source"
           icon={<AiOutlineGithub fontSize={30} className="text-white" />}
-          subtitle="Share it with your friends , customize it your way ! Here is the link to my github repository : https://www.g"
+          subtitle="Share it with your friends , customize it your way ! My name is MOUZAFIR & Here is the link to the github repository : "
         />
       </div>
     </div>
