@@ -1,5 +1,20 @@
 import React from 'react'
 
+
+const imagesUrl = "../../images/";
+const extension=".jpg";
+
+const imagesSources = [
+{"src": imagesUrl+"bitcoin"+extension},
+{"src": imagesUrl+"crypto"+extension},
+{"src": imagesUrl+"elon"+extension},
+{"src": imagesUrl+"ether"+extension},
+{"src": imagesUrl+"polygone"+extension},
+{"src": imagesUrl+"shiba"+extension},
+{"src": imagesUrl+"xrp"+extension},
+{"src": imagesUrl+"tether"+extension},
+];
+
 const StartButton = ({ title }) => {
     return (
 
