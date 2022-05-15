@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { scroller } from "react-scroll";
-import { Card } from './export'
+import { Card ,Popup} from './export'
 import logo from "../../images/koar.png";
 import me from "../../images/ABDELHADI.png";
+
+
 const imagesUrl = window.location.origin+"/images/";
 const extension = ".jpg";
 
@@ -146,7 +148,7 @@ const GameContent = () => {
                         />
                     </a>
                     <h1 className=" text-[60px] text-center my-2 text-gradient transfer-btn-text ">
-                        {turns - fails === imagesSources.length ? "Horay ! You won !" : "Crypto Memory Cards"}
+                     Crypto Memory Cards
                     </h1>
                 </div>
             </div>
@@ -169,6 +171,7 @@ const GameContent = () => {
                     </a>
                 </div>
             </div>
+            <Popup show={turns - fails === imagesSources.length} />
             {retries <= 0 && (<a href="" target="_blank" className="flex items-center mb-4 sm:mb-0  flex-1 flex-col ">
                 <img
                     src={me}
