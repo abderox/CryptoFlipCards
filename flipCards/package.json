@@ -1,8 +1,8 @@
 {
-  "name": "CryptoFlipCards.github.io",
+  "name": "CryptoFlipCards",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://abderox.github.io/CryptoFlipCards.github.io/",
+  "homepage": "https://abderox.github.io/CryptoFlipCards",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
